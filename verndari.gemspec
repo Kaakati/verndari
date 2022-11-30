@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require "rubygems"
 
 require_relative "lib/verndari/version"
 
@@ -33,6 +34,7 @@ Gem::Specification.new do |spec|
 
   # Uncomment to register a new dependency of your gem
   spec.add_dependency "rails", "~> 7.0"
+  spec.add_runtime_dependency 'faraday'
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
