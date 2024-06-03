@@ -7,6 +7,12 @@ module Verndari
       @app = app
     end
 
+    # Verndari.configure do |config|
+    #   config.host = "sirdab.co"
+    #   config.email = 'notifications@sirdab.co'
+    # end
+
+
     def call(env)
       base_url = 'https://verndari.io'
       email = Verndari.configuration.email
@@ -22,15 +28,7 @@ module Verndari
           status, headers, response = @app.call(env)
           return [status, headers, response]
         else
-          return [401, {"Content-Type" => "application/json"},
-            [{
-               description: "Unauthorized Access",
-               error: {
-                 code: 401,
-                 message: "Your application license key is invalid or expired."
-               }
-             }.to_json]
-          ]
+          return [ 500, {}, ["Internal Server Error\n"]]
         end
       rescue
         return [status, headers, response]

@@ -9,12 +9,12 @@ module Verndari
     end
 
     def host
-      raise Errors::Configuration, "Verndari host key is missing!" unless @host
+      # raise Errors::Configuration, "Verndari host key is missing!" unless @host
       @host
     end
 
     def email
-      raise Errors::Configuration, "Verndari email key is missing!" unless @email
+      # raise Errors::Configuration, "Verndari email key is missing!" unless @email
       @email
     end
 
